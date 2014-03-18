@@ -6,7 +6,7 @@ using ICSharpCode.AvalonEdit.CodeCompletion;
 using Roslyn.Compilers;
 using Roslyn.Compilers.CSharp;
 using Roslyn.Services;
-using Roslyn.Services.Host;
+using roslyn_completion;
 
 namespace min_cs_editor
 {
@@ -135,7 +135,6 @@ namespace min_cs_editor
         {
             var completionTrigger = CompletionTriggerInfo.CreateTypeCharTriggerInfo(triggerChar);
             var completionProviders = _completionService.GetDefaultCompletionProviders();
-
 
             var groups = _completionService.GetGroups(
                 CurrentScript.UpdateText(new StringText(Editor.Text)),
